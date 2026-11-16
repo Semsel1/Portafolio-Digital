@@ -1,9 +1,13 @@
-/* Estilos generales para el portafolio */
 :root {
   --primary-color: #2563eb;
+  --dark-blue: #1e3a8a;
   --bg-color: #f8fafc;
   --text-color: #1e293b;
   --card-bg: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -15,27 +19,120 @@ body {
   line-height: 1.6;
 }
 
+/* Botón fijo arriba a la derecha */
+.menu-btn {
+  position: fixed;
+  top: 1.2rem;
+  right: 1.5rem;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0.6rem 1.1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.menu-btn:hover {
+  background-color: rgba(255, 255, 255, 0.28);
+  transform: scale(1.03);
+}
+
+/* Menú lateral desplegable derecho */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -300px; /* Oculto por defecto */
+  width: 280px;
+  height: 100%;
+  background-color: var(--dark-blue);
+  color: white;
+  padding: 2rem 1.5rem;
+  box-sizing: border-box;
+  box-shadow: -4px 0 15px rgba(0, 0, 0, 0.2);
+  transition: right 0.35s ease;
+  z-index: 1100;
+}
+
+.sidebar.active {
+  right: 0; /* Se desliza hacia adentro al activar */
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1.2rem;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.sidebar h3 {
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 0.5rem;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.sidebar nav a {
+  color: #e2e8f0;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.5rem 0.7rem;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.sidebar nav a:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+/* Portada de inicio */
 header {
-  background: linear-gradient(135deg, #1e3a8a, var(--primary-color));
+  background: linear-gradient(135deg, var(--dark-blue), var(--primary-color));
   color: white;
   text-align: center;
-  padding: 3rem 1rem;
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1.5rem;
 }
 
 header h1 {
-  margin: 0 0 0.5rem 0;
-  font-size: 2.2rem;
+  margin: 0 0 1rem 0;
+  font-size: 2.6rem;
+  letter-spacing: 1.5px;
 }
 
 header p {
   margin: 0;
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   opacity: 0.9;
+  font-weight: 300;
+  max-width: 600px;
 }
 
+/* Contenido principal */
 main {
   max-width: 900px;
-  margin: 2rem auto;
+  margin: 2.5rem auto;
   padding: 0 1rem;
 }
 
@@ -44,11 +141,11 @@ section {
   padding: 2rem;
   margin-bottom: 1.5rem;
   border-radius: 12px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
 h2 {
-  color: #1e3a8a;
+  color: var(--dark-blue);
   border-bottom: 2px solid #e2e8f0;
   padding-bottom: 0.5rem;
   margin-top: 0;
