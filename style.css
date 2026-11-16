@@ -58,14 +58,14 @@ body {
 .sidebar {
   position: fixed;
   top: 0;
-  right: -320px; /* <--- ¡ESTO ERA! Debe estar oculto fuera de la pantalla por defecto */
+  right: -320px; /* Oculto por defecto fuera de la pantalla */
   width: 300px;
   height: 100%;
   background-color: rgba(15, 23, 42, 0.92);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   box-shadow: -10px 0 30px rgba(0, 0, 0, 0.4);
-  transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: right 0.35s ease-in-out;
   z-index: 2000;
   box-sizing: border-box;
   padding: 2rem 1.5rem;
@@ -73,21 +73,7 @@ body {
   border-left: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Cuando se abre haciendo clic en el botón de menú */
-.sidebar.active {
-  right: 0;
-}
-
-/* Estado cuando se oculta automáticamente al hacer scroll */
-.sidebar.scrolled-hidden {
-  right: -320px; /* Se esconde completamente fuera de la pantalla */
-}
-
-/* Cuando el menú está abierto */
-.sidebar.active {
-  right: 0;
-}
-
+/* Cuando se abre haciendo clic en el menú */
 .sidebar.active {
   right: 0;
 }
