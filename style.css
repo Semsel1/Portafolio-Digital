@@ -40,6 +40,20 @@ body {
   background-color: var(--dark-blue);
   transform: scale(1.03);
 }
+/* Estado transparente cuando el usuario baja en la página */
+.menu-btn.scrolled {
+  background-color: rgba(15, 23, 42, 0.25); /* Mucho más transparente */
+  border-color: rgba(15, 23, 42, 0.15);
+  color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(4px); /* Desenfoque sutil del fondo */
+  box-shadow: none;
+}
+
+/* Si pasas el cursor o lo tocas mientras está transparente, recupera nitidez */
+.menu-btn.scrolled:hover {
+  background-color: var(--dark-blue);
+  color: #ffffff;
+}
 .sidebar {
   position: fixed;
   top: 0;
