@@ -13,14 +13,15 @@
 
     <!-- Panel lateral desplegable a la derecha -->
     <aside id="sidebar" class="sidebar">
-        <button class="close-btn" onclick="toggleMenu()">&times;</button>
-        <h3>Contenido</h3>
+        <div class="sidebar-header">
+            <h3>Contenido</h3>
+            <button class="close-btn" onclick="toggleMenu()">&times;</button>
+        </div>
         <nav>
             <a href="#inicio" onclick="toggleMenu()">Inicio</a>
             <a href="#presentacion" onclick="toggleMenu()">Presentación</a>
-            <a href="#actividades" onclick="toggleMenu()">Actividades y Contenidos</a>
-            <a href="#unidad1" onclick="toggleMenu()">— Unidad 1: Enfoques Teóricos</a>
-            <a href="#unidad2" onclick="toggleMenu()">— Unidad 2: Estructuras</a>
+            <a href="#actividades" onclick="toggleMenu()">Actividades</a>
+            <a href="#actividad1" onclick="toggleMenu()">— Actividad 1: Huella Digital</a>
         </nav>
     </aside>
 
@@ -39,14 +40,13 @@
     <main>
         <section id="presentacion">
             <h2>Presentación</h2>
-            <p>Bienvenido a este espacio académico, donde recopilo los aprendizajes, análisis y actividades desarrolladas en la asignatura Teoría de las Organizaciones.</p>
+            <p>Bienvenido al espacio académico donde se recopilan los aprendizajes, análisis y actividades desarrolladas en la asignatura Teoría de las Organizaciones.</p>
         </section>
 
         <section id="actividades">
-            <h2>Actividades y Contenidos</h2>
+            <h2>Actividades</h2>
             <ul>
-                <li id="unidad1"><strong>Unidad 1:</strong> Introducción al estudio de las organizaciones y enfoques teóricos.</li>
-                <li id="unidad2"><strong>Unidad 2:</strong> Análisis de estructuras organizacionales y dinámicas institucionales.</li>
+                <li id="actividad1"><strong>Actividad 1: Huella Digital</strong> — Análisis y reflexión sobre la identidad y el rastro digital en los entornos organizacionales.</li>
             </ul>
         </section>
     </main>
