@@ -64,14 +64,15 @@ body {
 .sidebar.active {
   right: 0;
 }
-
 .sidebar-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* Se eliminó la línea divisoria de aquí */
-  padding-bottom: 0.5rem;
-  margin-bottom: 1rem;
+  /* Una línea difuminada tipo luz que se desvanece en los extremos */
+  border-bottom: 1px solid transparent;
+  border-image: linear-gradient(to right, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05)) 1;
+  padding-bottom: 0.8rem;
+  margin-bottom: 1.2rem;
 }
 
 .sidebar h3 {
