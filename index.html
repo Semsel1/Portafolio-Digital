@@ -8,7 +8,7 @@
 </head>
 <body>
 
-    <!-- Botón para abrir el menú lateral -->
+    <!-- Botón fijo para abrir el menú lateral -->
     <button class="menu-btn" onclick="toggleMenu()">☰ Menú</button>
 
     <!-- Panel lateral desplegable a la derecha -->
@@ -19,15 +19,21 @@
             <a href="#inicio" onclick="toggleMenu()">Inicio</a>
             <a href="#presentacion" onclick="toggleMenu()">Presentación</a>
             <a href="#actividades" onclick="toggleMenu()">Actividades y Contenidos</a>
-            <a href="#Actividad1" onclick="toggleMenu()">— Actividad 1: Huella Digital</a>
-            
+            <a href="#unidad1" onclick="toggleMenu()">— Unidad 1: Enfoques Teóricos</a>
+            <a href="#unidad2" onclick="toggleMenu()">— Unidad 2: Estructuras</a>
         </nav>
     </aside>
 
-    <!-- Pantalla de bienvenida (Inicio) -->
+    <!-- Pantalla de bienvenida (Inicio) enriquecida -->
     <header id="inicio">
+        <span class="badge">Teoría de las Organizaciones — UCV</span>
         <h1>BIENVENIDO A MI PORTAFOLIO DIGITAL</h1>
         <p>Un lugar para conocer al respecto de mis trabajos y actividades</p>
+        
+        <a href="#presentacion" class="scroll-indicator" aria-label="Bajar a presentación">
+            <span>Explorar</span>
+            <div class="arrow">↓</div>
+        </a>
     </header>
 
     <main>
@@ -39,8 +45,8 @@
         <section id="actividades">
             <h2>Actividades y Contenidos</h2>
             <ul>
-                <li id="Actividad1"><strong>Actividad 1:</strong> Huella Digital.</li>
-               
+                <li id="unidad1"><strong>Unidad 1:</strong> Introducción al estudio de las organizaciones y enfoques teóricos.</li>
+                <li id="unidad2"><strong>Unidad 2:</strong> Análisis de estructuras organizacionales y dinámicas institucionales.</li>
             </ul>
         </section>
     </main>
@@ -49,7 +55,6 @@
         <p>Desarrollado para Teoría de las Organizaciones &copy; 2026</p>
     </footer>
 
-    <!-- Script mínimo para abrir/cerrar el menú -->
     <script>
         function toggleMenu() {
             document.getElementById('sidebar').classList.toggle('active');
