@@ -34,7 +34,7 @@
     <header id="inicio">
         <span class="badge">Teoría de las Organizaciones - UCV</span>
         <h1>BIENVENIDO A MI PORTAFOLIO DIGITAL</h1>
-        <p>En este lugar podremos observar y conocer todas y cada una de las actividades presentadas para la catedra de Teoria de las Organizaciones por mi persona Lesmes Landáez</p>
+        <p>En este espacio podremos observar y conocer todas las actividades presentadas para la cátedra de Teoría de las Organizaciones por mi parte, Lesmes Landáez.</p>
         
         <a href="#presentacion" class="scroll-indicator" aria-label="Bajar a presentación">
             <span>Explorar</span>
@@ -48,20 +48,25 @@
             <p> Mi nombre es Lesmes Landáez, tengo 26 años, soy estudiante de Educación en la Universidad Central de Venezuela. Además de eso, también soy músico y profesor de música, específicamente del contrabajo. Luego de presentarme por acá, les dejo la recopilación de mis trabajos y presentaciones para esta cátedra; espero sea de su agrado, al igual que esta página web. </p>
         </section>
 
-        <section id="actividades">
-            <h2>Actividades</h2>
+ <section id="actividades">
+            <h2 onclick="toggleActivities()">
+                Actividades <span id="arrow-icon" style="font-size: 0.8rem; transition: transform 0.3s ease;">▼</span>
+            </h2>
             
-            <div class="activity-card" id="actividad1">
-                <h3>Actividad 1: Huella Digital</h3>
-                <p>Análisis y reflexión sobre la identidad y el rastro digital en los entornos organizacionales.</p>
-                
-               
-                <div class="activity-step" id="investigacion-personal">
-                    <h4>1.1. Investigación personal "Lesmes Landáez"</h4>
-                    <p>A continuación, se presenta la captura de pantalla correspondiente al registro de la búsqueda realizada en la web:</p>
+            <!-- Contenedor que estará oculto por defecto -->
+            <div class="activities-content" id="activitiesContent">
+                <div class="activity-card" id="actividad1">
+                    <h3>Actividad 1: Huella Digital</h3>
+                    <p>Análisis y reflexión sobre la identidad y el rastro digital en los entornos organizacionales.</p>
                     
-                    <div class="image-container">
-                        <img src="busqueda-google.png" alt="Captura de pantalla de la búsqueda en Google sobre huella digital">
+                    <!-- Subsección 1.1 -->
+                    <div class="activity-step" id="investigacion-personal">
+                        <h4>1.1. Investigación personal "Lesmes Landáez"</h4>
+                        <p>A continuación, se presenta la captura de pantalla correspondiente al registro de la búsqueda realizada en la web:</p>
+                        
+                        <div class="image-container">
+                            <img src="busqueda-google.png" alt="Captura de pantalla de la búsqueda en Google sobre huella digital">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -83,6 +88,42 @@
         }
 
         // Detecta cuando bajas por la página para hacer el botón transparente
+        window.addEventListener('scroll', function() {
+            const menuBtn = document.querySelector('.menu-btn');
+            if (window.scrollY > 150) {
+                menuBtn.classList.add('scrolled');
+            } else {
+                menuBtn.classList.remove('scrolled');
+            }
+        });
+    </script>
+    <script>
+        function toggleMenu() {
+            document.getElementById('sidebar').classList.toggle('active');
+        }
+
+        // Función para abrir/cerrar el despliegue de actividades
+        function toggleActivities() {
+            const content = document.getElementById('activitiesContent');
+            const header = document.querySelector('#actividades h2');
+            
+            content.classList.toggle('show');
+            header.classList.toggle('active');
+        }
+
+        // Modificamos el comportamiento al hacer clic en el menú lateral para asegurar que se abra
+        document.querySelector('aside nav a[href="#actividades"]').addEventListener('click', function(e) {
+            const content = document.getElementById('activitiesContent');
+            const header = document.querySelector('#actividades h2');
+            
+            // Si está cerrado, lo abre automáticamente al seleccionarlo en el menú
+            if (!content.classList.contains('show')) {
+                content.classList.add('show');
+                header.classList.add('active');
+            }
+        });
+
+        // Transparencia del botón de menú al hacer scroll
         window.addEventListener('scroll', function() {
             const menuBtn = document.querySelector('.menu-btn');
             if (window.scrollY > 150) {
