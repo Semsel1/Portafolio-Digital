@@ -54,23 +54,28 @@ body {
   background-color: var(--dark-blue);
   color: #ffffff;
 }
-/* Panel lateral desplegable con efecto translúcido (Glassmorphism) */
+/* Barra lateral de navegación ("Contenido") */
 .sidebar {
   position: fixed;
   top: 0;
-  right: -320px; /* Oculto por defecto a la derecha */
+  right: 0; /* Visible en el lateral derecho por defecto */
   width: 300px;
   height: 100%;
-  background-color: rgba(15, 23, 42, 0.35); /* Fondo oscuro semi-transparente */
-  backdrop-filter: blur(14px);               /* Efecto de desenfoque del fondo */
-  -webkit-backdrop-filter: blur(14px);         /* Soporte para Safari/iOS */
+  background-color: rgba(15, 23, 42, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   box-shadow: -10px 0 30px rgba(0, 0, 0, 0.4);
-  transition: right 0.35s ease-in-out;
+  transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1); /* Transición suave y moderna */
   z-index: 2000;
   box-sizing: border-box;
   padding: 2rem 1.5rem;
   overflow-y: auto;
-  border-left: 1px solid rgba(255, 255, 255, 0.1); /* Borde sutil elegante */
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Estado cuando se oculta automáticamente al hacer scroll */
+.sidebar.scrolled-hidden {
+  right: -320px; /* Se esconde completamente fuera de la pantalla */
 }
 
 /* Cuando el menú está abierto */
