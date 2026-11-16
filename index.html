@@ -133,5 +133,50 @@
             }
         });
     </script>
+    <script>
+        function toggleMenu() {
+            document.getElementById('sidebar').classList.toggle('active');
+        }
+
+        // Función para abrir/cerrar el despliegue de actividades manualmente desde su título
+        function toggleActivities() {
+            const content = document.getElementById('activitiesContent');
+            const header = document.querySelector('#actividades h2');
+            
+            content.classList.toggle('show');
+            header.classList.toggle('active');
+        }
+
+        // Hacer que CUALQUIER enlace del menú lateral relacionado con actividades abra el acordeón automáticamente
+        const sidebarLinks = document.querySelectorAll('aside nav a');
+        
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                // Si el enlace apunta a la sección de actividades o sus sub-elementos
+                if (href === '#actividades' || href === '#actividad1' || href === '#investigacion-personal') {
+                    const content = document.getElementById('activitiesContent');
+                    const header = document.querySelector('#actividades h2');
+                    
+                    // Si el contenido está oculto, lo abrimos antes de que la página navegue al ancla
+                    if (!content.classList.contains('show')) {
+                        content.classList.add('show');
+                        header.classList.add('active');
+                    }
+                }
+            });
+        });
+
+        // Transparencia del botón de menú al hacer scroll
+        window.addEventListener('scroll', function() {
+            const menuBtn = document.querySelector('.menu-btn');
+            if (window.scrollY > 150) {
+                menuBtn.classList.add('scrolled');
+            } else {
+                menuBtn.classList.remove('scrolled');
+            }
+        });
+    </script>
 </body>
 </html>
