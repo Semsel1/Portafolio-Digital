@@ -62,7 +62,7 @@ body {
   width: 300px;
   height: 100%;
   background-color: rgba(15, 23, 42, 0.35); /* Fondo oscuro semi-transparente */
-  backdrop-filter: blur(14px);                 /* Efecto de desenfoque del fondo */
+                /* Efecto de desenfoque del fondo */
   -webkit-backdrop-filter: blur(14px);         /* Soporte para Safari/iOS */
   box-shadow: -10px 0 30px rgba(0, 0, 0, 0.4);
   transition: right 0.35s ease-in-out;
