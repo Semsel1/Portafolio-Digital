@@ -178,5 +178,54 @@
             }
         });
     </script>
+    <script>
+        // Función para abrir/cerrar el menú lateral con el botón
+        function toggleMenu() {
+            document.getElementById('sidebar').classList.toggle('active');
+        }
+
+        // Función para abrir/cerrar el despliegue de actividades
+        function toggleActivities() {
+            const content = document.getElementById('activitiesContent');
+            const header = document.querySelector('#actividades h2');
+            
+            content.classList.toggle('show');
+            header.classList.toggle('active');
+        }
+
+        // Abrir automáticamente el acordeón al hacer clic desde el menú lateral
+        const sidebarLinks = document.querySelectorAll('aside nav a');
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href === '#actividades' || href === '#actividad1' || href === '#investigacion-personal') {
+                    const content = document.getElementById('activitiesContent');
+                    const header = document.querySelector('#actividades h2');
+                    
+                    if (!content.classList.contains('show')) {
+                        content.classList.add('show');
+                        header.classList.add('active');
+                    }
+                }
+            });
+        });
+
+        // --- CONTROL DE LA BARRA LATERAL AL HACER SCROLL ---
+        const sidebar = document.getElementById('sidebar');
+
+        // Ocultar la barra lateral automáticamente al bajar más de 100px en la página
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 100) {
+                sidebar.classList.add('scrolled-hidden');
+            } else {
+                sidebar.classList.remove('scrolled-hidden');
+            }
+        });
+
+        // Hacer que la barra reaparezca al pasar el mouse por el borde derecho
+        sidebar.addEventListener('mouseenter', function() {
+            sidebar.classList.remove('scrolled-hidden');
+        });
+    </script>
 </body>
 </html>
