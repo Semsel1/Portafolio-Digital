@@ -18,8 +18,6 @@ body {
   padding: 0;
   line-height: 1.6;
 }
-
-/* Botón fijo arriba a la derecha */
 .menu-btn {
   position: fixed;
   top: 1.2rem;
@@ -42,8 +40,6 @@ body {
   background-color: var(--dark-blue);
   transform: scale(1.03);
 }
-
-/* Menú lateral desplegable derecho (Totalmente limpio sin líneas) */
 .sidebar {
   position: fixed;
   top: 0;
@@ -68,11 +64,37 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* Una línea difuminada tipo luz que se desvanece en los extremos */
-  border-bottom: 1px solid transparent;
-  border-image: linear-gradient(to right, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05)) 1;
   padding-bottom: 0.8rem;
   margin-bottom: 1.2rem;
+  position: relative;
+}
+.sidebar-header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 45px;
+  height: 3px;
+  background-color: #3b82f6;
+  border-radius: 2px;
+}
+
+.sidebar nav a.sub-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-left: 0.5rem;
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+.sidebar nav a.sub-item .tag {
+  background-color: rgba(59, 130, 246, 0.2);
+  color: #60a5fa;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
 }
 
 .sidebar h3 {
@@ -95,8 +117,6 @@ body {
 .close-btn:hover {
   color: white;
 }
-
-/* Enlaces del menú limpios */
 .sidebar nav {
   display: flex;
   flex-direction: column;
@@ -118,8 +138,6 @@ body {
   color: #ffffff;
   padding-left: 1.2rem;
 }
-
-/* Portada de inicio */
 header {
   position: relative;
   background: radial-gradient(circle at 50% 45%, #3b82f6 0%, #1d4ed8 45%, #1e3a8a 100%);
@@ -162,8 +180,6 @@ header p {
   font-weight: 300;
   max-width: 620px;
 }
-
-/* Indicador animado inferior */
 .scroll-indicator {
   position: absolute;
   bottom: 2rem;
@@ -194,7 +210,6 @@ header p {
   60% { transform: translateY(4px); }
 }
 
-/* Contenido principal */
 main {
   max-width: 900px;
   margin: 2.5rem auto;
