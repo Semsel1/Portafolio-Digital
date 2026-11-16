@@ -296,3 +296,36 @@ footer {
   display: block;
   margin: 0 auto;
 }
+/* Título interactivo de actividades */
+#actividades h2 {
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  transition: color 0.2s ease;
+}
+
+#actividades h2:hover {
+  color: #3b82f6;
+}
+
+/* Contenido oculto por defecto con transición fluida */
+.activities-content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.5s ease-in-out, opacity 0.3s ease-in-out, margin-top 0.3s ease;
+}
+
+/* Cuando se abre la sección */
+.activities-content.show {
+  max-height: 3000px; /* Suficiente espacio para todas las actividades futuras */
+  opacity: 1;
+  margin-top: 1.5rem;
+}
+
+/* Rotación de la flecha indicadora */
+#actividades h2.active #arrow-icon {
+  transform: rotate(180deg);
+}
