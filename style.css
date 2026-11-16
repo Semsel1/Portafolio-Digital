@@ -43,14 +43,14 @@ body {
   transform: scale(1.03);
 }
 
-/* Menú lateral desplegable derecho (Estilo moderno sin líneas molestas) */
+/* Menú lateral desplegable derecho (Totalmente limpio sin líneas) */
 .sidebar {
   position: fixed;
   top: 0;
   right: -320px;
   width: 300px;
   height: 100%;
-  background-color: #0f172a; /* Azul oscuro corporativo más profundo */
+  background-color: #0f172a;
   color: white;
   padding: 2rem 1.5rem;
   box-sizing: border-box;
@@ -69,9 +69,9 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding-bottom: 1rem;
-  margin-bottom: 1.5rem;
+  /* Se eliminó la línea divisoria de aquí */
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .sidebar h3 {
@@ -95,7 +95,7 @@ body {
   color: white;
 }
 
-/* Enlaces del menú limpios y profesionales */
+/* Enlaces del menú limpios */
 .sidebar nav {
   display: flex;
   flex-direction: column;
@@ -109,15 +109,13 @@ body {
   padding: 0.8rem 1rem;
   border-radius: 8px;
   transition: all 0.25s ease;
-  position: relative;
   background-color: transparent;
 }
 
-/* Efecto hover elegante sin líneas */
 .sidebar nav a:hover {
   background-color: rgba(255, 255, 255, 0.08);
   color: #ffffff;
-  padding-left: 1.2rem; /* Sutil movimiento hacia la derecha */
+  padding-left: 1.2rem;
 }
 
 /* Portada de inicio */
