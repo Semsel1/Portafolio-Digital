@@ -8,26 +8,29 @@
 </head>
 <body>
 
-    
+    <!-- Botón fijo para abrir el menú lateral -->
     <button class="menu-btn" onclick="toggleMenu()">☰ Menú</button>
 
-   
+    <!-- Panel lateral desplegable a la derecha -->
     <aside id="sidebar" class="sidebar">
         <div class="sidebar-header">
             <h3>Contenido</h3>
             <button class="close-btn" onclick="toggleMenu()">&times;</button>
         </div>
-     <nav>
+        <nav>
             <a href="#inicio" onclick="toggleMenu()">Inicio</a>
             <a href="#presentacion" onclick="toggleMenu()">Presentación</a>
             <a href="#actividades" onclick="toggleMenu()">Actividades</a>
-            <a href="#actividad1" class="sub-item" onclick="toggleMenu()">
-                <span class="num">1.</span> Huella Digital
+            
+            <!-- Actividad principal y su subsección -->
+            <a href="#actividad1" onclick="toggleMenu()">1. Actividad 1: Huella Digital</a>
+            <a href="#investigacion-personal" class="sub-item" onclick="toggleMenu()">
+                <span class="num">1.1.</span> Investigación personal "Lesmes Landáez"
             </a>
         </nav>
     </aside>
 
-    
+    <!-- Pantalla de bienvenida (Inicio) -->
     <header id="inicio">
         <span class="badge">Teoría de las Organizaciones — UCV</span>
         <h1>BIENVENIDO A MI PORTAFOLIO DIGITAL</h1>
@@ -47,9 +50,21 @@
 
         <section id="actividades">
             <h2>Actividades</h2>
-            <ul>
-                <li id="actividad1"><strong>Actividad 1: Huella Digital</strong> — Análisis y reflexión sobre la identidad y el rastro digital en los entornos organizacionales.</li>
-            </ul>
+            
+            <div class="activity-card" id="actividad1">
+                <h3>Actividad 1: Huella Digital</h3>
+                <p>Análisis y reflexión sobre la identidad y el rastro digital en los entornos organizacionales.</p>
+                
+                <!-- Subsección 1.1 con su ID para el enlace del menú -->
+                <div class="activity-step" id="investigacion-personal">
+                    <h4>1.1. Investigación personal "Lesmes Landáez"</h4>
+                    <p>A continuación, se presenta la captura de pantalla correspondiente al registro de la búsqueda realizada en la web:</p>
+                    
+                    <div class="image-container">
+                        <img src="busqueda-google.png" alt="Captura de pantalla de la búsqueda en Google sobre huella digital">
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
