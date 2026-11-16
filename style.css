@@ -253,3 +253,25 @@ footer {
   header h1 { font-size: 1.9rem; }
   header p { font-size: 1.05rem; }
 }
+/* Contenedor de la imagen optimizado y controlado */
+.image-container {
+  margin-top: 1rem;
+  text-align: center;
+  background-color: #f1f5f9;
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  max-width: 650px;
+  max-height: 450px;
+  object-fit: contain;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: block;
+  margin: 0 auto;
+}
