@@ -77,6 +77,20 @@
             document.getElementById('sidebar').classList.toggle('active');
         }
     </script>
+<script>
+        function toggleMenu() {
+            document.getElementById('sidebar').classList.toggle('active');
+        }
 
+        // Detecta cuando bajas por la página para hacer el botón transparente
+        window.addEventListener('scroll', function() {
+            const menuBtn = document.querySelector('.menu-btn');
+            if (window.scrollY > 150) {
+                menuBtn.classList.add('scrolled');
+            } else {
+                menuBtn.classList.remove('scrolled');
+            }
+        });
+    </script>
 </body>
 </html>
