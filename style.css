@@ -325,3 +325,49 @@ footer {
 #actividades h2.active #arrow-icon {
   transform: rotate(180deg);
 }
+/* Contenedor del botón del PDF */
+.pdf-actions {
+  margin: 1rem 0;
+}
+
+/* Botón moderno para abrir el PDF en pantalla completa */
+.pdf-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background-color: rgba(30, 41, 59, 0.9);
+  color: #f8fafc;
+  padding: 0.7rem 1.25rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.25s ease;
+}
+
+.pdf-btn:hover {
+  background-color: #3b82f6;
+  border-color: #60a5fa;
+  transform: translateY(-2px);
+}
+
+/* Marco de vista previa compacto */
+.pdf-preview-container {
+  width: 100%;
+  max-width: 650px; /* Mantiene la misma proporción elegante de tus imágenes */
+  height: 380px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  background-color: #1e293b;
+}
+
+.pdf-preview-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
