@@ -258,24 +258,46 @@ sidebarLinks.forEach(link => {
         });
     </script>
     <script>
-document.addEventListener("DOMContentLoaded", () => {
-    // Selecciona el enlace del menú que apunta a actividades
-    const menuLink = document.querySelector('a[href="#actividades"]');
-    // Selecciona el contenedor del contenido y el título/cabecera que lleva la flecha
+// Script definitivo para controlar el menú lateral, apertura de acordeón y scroll suave
+document.addEventListener('DOMContentLoaded', () => {
+    const sidebarLinks = document.querySelectorAll('aside nav a');
     const activitiesContent = document.querySelector('.activities-content');
-    const activitiesHeader = document.querySelector('#actividades h2'); // O la clase/elemento contenedor de tu título
+    const activitiesHeader = document.querySelector('#actividades h2');
+    const sidebar = document.getElementById('sidebar');
 
-    if (menuLink && activitiesContent) {
-        menuLink.addEventListener("click", (e) => {
-            // Añade o quita la clase .show para abrir el acordeón
-            activitiesContent.classList.toggle('show');
-            
-            // Si tu título usa la clase .active para girar la flecha, la alternamos también
-            if (activitiesHeader) {
-                activitiesHeader.classList.toggle('active');
+    sidebarLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+
+            // Verificamos si el enlace apunta a la sección de actividades o a sus sub-ítems
+            if (href && href.startsWith('#')) {
+                const targetElement = document.querySelector(href);
+
+                // Si el destino pertenece al bloque de actividades o sus hijos
+                if (href === '#actividades' || href === '#actividad1' || href === '#investigacion-personal' || href === '#ensayo-reflexivo') {
+                    e.preventDefault(); // Evitamos el salto brusco predeterminado
+
+                    // 1. Abrimos el acordeón si está cerrado
+                    if (activitiesContent && !activitiesContent.classList.contains('show')) {
+                        activitiesContent.classList.add('show');
+                        if (activitiesHeader) activitiesHeader.classList.add('active');
+                    }
+
+                    // 2. Hacemos el scroll suave hacia el elemento correspondiente tras un breve respiro
+                    if (targetElement) {
+                        setTimeout(() => {
+                            targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }, 100);
+                    }
+                }
+            }
+
+            // Cierra el menú lateral automáticamente en pantallas pequeñas (móviles)
+            if (sidebar) {
+                sidebar.classList.remove('active');
             }
         });
-    }
+    });
 });
 </script>
 </body>
