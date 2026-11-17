@@ -27,6 +27,13 @@
             <a href="#investigacion-personal" class="sub-item" onclick="toggleMenu()">
                 <span class="num">1.1.</span> Investigación personal "Lesmes Landáez"
             </a>
+            <a href="#actividad1">1. Actividad 1: Huella Digital</a>
+            <a href="#investigacion-personal" class="sub-item">
+                <span class="num">1.1.</span> Investigación personal "Lesmes Landáez"
+            </a>
+            <a href="#ensayo-reflexivo" class="sub-item">
+                <span class="num">1.2.</span> Ensayo reflexivo
+            </a>
         </nav>
     </aside>
 
@@ -68,11 +75,29 @@
                             <img src="busqueda-google.png" alt="Captura de pantalla de la búsqueda en Google sobre huella digital">
                         </div>
                     </div>
+                    <!-- Subsección 1.2 -->
+                    <div class="activity-step" id="ensayo-reflexivo">
+                        <h4>1.2. Ensayo reflexivo</h4>
+                        <p>Análisis crítico y reflexión sobre la huella digital y su impacto en las organizaciones contemporáneas (7 páginas).</p>
+                        
+                        <!-- Barra de acciones del PDF -->
+                        <div class="pdf-actions">
+                            <a href="ensayo-reflexivo.pdf" target="_blank" class="pdf-btn">
+                                📄 Abrir ensayo en pantalla completa (PDF)
+                            </a>
+                        </div>
+
+                        <!-- Vista previa incrustada -->
+                        <div class="pdf-preview-container">
+                            <iframe src="ensayo-reflexivo.pdf#toolbar=0" title="Vista previa del Ensayo Reflexivo">
+                                <p>Tu navegador no soporta la vista previa de PDF. <a href="ensayo-reflexivo.pdf" target="_blank">Haz clic aquí para abrirlo</a>.</p>
+                            </iframe>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
-
     <footer>
         <p>Desarrollado para Teoría de las Organizaciones por Lesmes Landáez, Sección A1. Profa. Clorinda Maiuri. Universidad Central de Venezuela, Escuela de Educacion &copy; 2026</p>
     </footer>
@@ -177,7 +202,6 @@
                 menuBtn.classList.remove('scrolled');
             }
         });
-    </script>
     <script>
         // Función para abrir/cerrar el menú lateral con el botón
         function toggleMenu() {
@@ -198,21 +222,19 @@
         sidebarLinks.forEach(link => {
             link.addEventListener('click', function(e) {
                 const href = this.getAttribute('href');
-                if (href === '#actividades' || href === '#actividad1' || href === '#investigacion-personal') {
+   if (href === '#actividades' || href === '#actividad1' || href === '#investigacion-personal' || href === '#ensayo-reflexivo') {
                     const content = document.getElementById('activitiesContent');
                     const header = document.querySelector('#actividades h2');
                     
                     if (!content.classList.contains('show')) {
                         content.classList.add('show');
                         header.classList.add('active');
+                        // Cierra el menú lateral automáticamente al hacer clic en cualquier opción
+document.getElementById('sidebar').classList.remove('active');
                     }
                 }
             });
         });
-
-        // --- CONTROL DE LA BARRA LATERAL AL HACER SCROLL ---
-        const sidebar = document.getElementById('sidebar');
-
         // Ocultar la barra lateral automáticamente al bajar más de 100px en la página
         window.addEventListener('scroll', function() {
             if (window.scrollY > 100) {
