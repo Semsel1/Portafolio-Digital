@@ -224,10 +224,11 @@ sidebarLinks.forEach(link => {
             // Evitamos el salto brusco por defecto del navegador
             e.preventDefault();
 
-            const content = document.getElementById('activitiesContent');
+            // Usamos querySelector con la clase correcta (.activities-content)
+            const content = document.querySelector('.activities-content');
             const header = document.querySelector('#actividades h2');
             
-            // Decidimos a qué elemento específico hacer scroll (si es un sub-ítem o el contenedor general)
+            // Buscamos el elemento específico o la sección general
             const targetElement = document.querySelector(href) || document.getElementById('actividades');
 
             // 1. Abre el acordeón si está cerrado
@@ -236,11 +237,11 @@ sidebarLinks.forEach(link => {
                 if (header) header.classList.add('active');
             }
 
-            // 2. Esperamos un mini instante a que el acordeón empiece a abrirse y hacemos scroll hacia la sección exacta
+            // 2. Desplaza suavemente la vista hacia el sub-ítem exacto o la sección
             if (targetElement) {
                 setTimeout(() => {
                     targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }, 50); // Pequeño retraso de 50ms para sincronizar con la apertura
+                }, 50);
             }
         }
 
